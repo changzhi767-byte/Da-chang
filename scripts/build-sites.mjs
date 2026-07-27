@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises"
+import { mkdir, rename, writeFile } from "node:fs/promises"
 
 const worker = `export default {
   async fetch(request, env) {
@@ -18,5 +18,14 @@ const worker = `export default {
 }
 `
 
-await mkdir(new URL("../dist/server/", import.meta.url), { recursive: true })
+const distUrl = new URL("../dist/", import.meta.url)
+const clientUrl = new URL("./client/", distUrl)
+
+await mkdir(clientUrl, { recursive: true })
+
+for (const entry of ["index.html", "shadcn.html", "assets"]) {
+  await rename(new URL(entry, distUrl), new URL(entry, clientUrl))
+}
+
+await mkdir(new URL("./server/", distUrl), { recursive: true })
 await writeFile(new URL("../dist/server/index.js", import.meta.url), worker)
