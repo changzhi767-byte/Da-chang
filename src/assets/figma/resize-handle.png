@@ -1,0 +1,20 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 8 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 1000003556">
+<mask id="path-1-inside-1_0_558" fill="white">
+<path d="M0 4C0 1.79086 1.79086 0 4 0V0C6.20914 0 8 1.79086 8 4V44C8 46.2091 6.20914 48 4 48V48C1.79086 48 0 46.2091 0 44V4Z"/>
+</mask>
+<path d="M0 4C0 1.79086 1.79086 0 4 0V0C6.20914 0 8 1.79086 8 4V44C8 46.2091 6.20914 48 4 48V48C1.79086 48 0 46.2091 0 44V4Z" fill="#F7F9FC"/>
+<path d="M8 4H7.5V44H8H8.5V4H8ZM0 44H0.5V4H0H-0.5V44H0ZM4 48V47.5C2.067 47.5 0.5 45.933 0.5 44H0H-0.5C-0.5 46.4853 1.51472 48.5 4 48.5V48ZM8 44H7.5C7.5 45.933 5.933 47.5 4 47.5V48V48.5C6.48528 48.5 8.5 46.4853 8.5 44H8ZM4 0V0.5C5.933 0.5 7.5 2.067 7.5 4H8H8.5C8.5 1.51472 6.48528 -0.5 4 -0.5V0ZM4 0V-0.5C1.51472 -0.5 -0.5 1.51472 -0.5 4H0H0.5C0.5 2.067 2.067 0.5 4 0.5V0Z" fill="#B0B5CD" mask="url(#path-1-inside-1_0_558)"/>
+<path id="Line 8 (Stroke)" d="M3.33887 31.4766L2.84253 31.4766L2.84253 16.5234L3.33887 16.5234L3.33887 31.4766Z" fill="white"/>
+<path id="Line 8 (Stroke)_2" d="M5.84357 31.4766L5.34723 31.4766L5.34723 16.5234L5.84357 16.5234L5.84357 31.4766Z" fill="white"/>
+<path id="Line 8 (Stroke)_3" d="M3 31.4766L2.50366 31.4766L2.50366 16.5234L3 16.5234L3 31.4766Z" fill="#B0B5CD"/>
+<path id="Line 8 (Stroke)_4" d="M5.49634 31.4766L5 31.4766L5 16.5234L5.49634 16.5234L5.49634 31.4766Z" fill="#B0B5CD"/>
+<path id="Rectangle 34624120" d="M4 0.826172C5.76364 0.826172 7.19336 2.25589 7.19336 4.01953V43.9805C7.19336 45.7441 5.76364 47.1738 4 47.1738C2.23636 47.1738 0.806641 45.7441 0.806641 43.9805V4.01953C0.806641 2.25589 2.23636 0.826172 4 0.826172Z" stroke="url(#paint0_linear_0_558)" stroke-width="0.5"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_558" x1="1.06273" y1="2.5663" x2="6.31219" y2="45.4266" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#F7F9FC"/>
+</linearGradient>
+</defs>
+</svg>
