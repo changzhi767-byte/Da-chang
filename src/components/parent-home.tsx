@@ -105,8 +105,8 @@ function FeatureCard({
       className={cn(
         "group relative min-w-0 cursor-pointer border-0 py-0 transition-transform hover:-translate-y-0.5",
         compact
-          ? "h-[74px] overflow-hidden bg-white shadow-[0_4px_24px_rgba(0,0,0,0.05),inset_0_0_2px_rgba(255,255,255,0.9)]"
-          : "h-[76px] overflow-visible bg-transparent shadow-none"
+          ? "h-[82px] overflow-hidden bg-white shadow-[0_4px_24px_rgba(0,0,0,0.05),inset_0_0_2px_rgba(255,255,255,0.9)] sm:h-[74px]"
+          : "h-[92px] overflow-visible bg-transparent shadow-none sm:h-[76px]"
       )}
     >
       {!compact && (
@@ -121,8 +121,8 @@ function FeatureCard({
         className={cn(
           "relative z-10 flex h-full px-4",
           compact
-            ? "items-center justify-between gap-3"
-            : "flex-col justify-center gap-2"
+            ? "flex-col items-start justify-center gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-3"
+            : "flex-col justify-center gap-2 pr-24 sm:pr-4"
         )}
       >
         <div className="flex min-w-0 items-center gap-1">
@@ -131,12 +131,12 @@ function FeatureCard({
             className="h-[15px] w-1 shrink-0 rounded-full"
             style={{ backgroundColor: feature.accent }}
           />
-          <span className="truncate text-base font-semibold leading-[22px]">
+          <span className="min-w-0 truncate text-base font-semibold leading-[22px]">
             {feature.title}
           </span>
           <ArrowRightCircle className="size-3.5 shrink-0 fill-foreground text-white" />
         </div>
-        <p className="truncate text-[11px] leading-[1.4] text-foreground">
+        <p className="max-w-full truncate text-[11px] leading-[1.4] text-foreground">
           {feature.description}
         </p>
       </CardContent>
@@ -207,7 +207,7 @@ function BottomNavigation() {
   return (
     <nav
       aria-label="主导航"
-      className="fixed bottom-8 left-1/2 z-30 flex h-[54px] w-[343px] -translate-x-1/2 items-center rounded-[28px] border border-[#b2b6c6]/35 bg-white/80 p-[3px] shadow-[15px_3px_22px_rgba(24,111,242,0.05),inset_0_0_3px_rgba(255,255,255,0.75)] backdrop-blur-md"
+      className="fixed bottom-[max(16px,env(safe-area-inset-bottom))] left-1/2 z-30 flex h-[54px] w-[calc(100%-32px)] max-w-[343px] -translate-x-1/2 items-center rounded-[28px] border border-[#b2b6c6]/35 bg-white/80 p-[3px] shadow-[15px_3px_22px_rgba(24,111,242,0.05),inset_0_0_3px_rgba(255,255,255,0.75)] backdrop-blur-md sm:bottom-8"
     >
       {items.map((item) => (
         <button
@@ -234,9 +234,9 @@ function BottomNavigation() {
 
 export function ParentHome() {
   return (
-    <main className="min-h-[1024px] overflow-x-hidden bg-[#f7f9fc] px-4 pb-32 pt-8 text-[#1c1f2e]">
+    <main className="min-h-dvh overflow-x-hidden bg-[#f7f9fc] px-4 pb-32 pt-[max(24px,env(safe-area-inset-top))] text-[#1c1f2e] sm:min-h-[1024px] sm:pt-8">
       <div className="mx-auto flex w-full max-w-[736px] flex-col gap-4">
-        <header className="flex items-center gap-4 py-2">
+        <header className="flex flex-col gap-4 py-2 sm:flex-row sm:items-center">
           <div className="flex min-w-0 flex-1 items-center gap-4">
             <img
               alt="张老师头像"
@@ -250,28 +250,28 @@ export function ParentHome() {
               </h1>
             </div>
           </div>
-          <div className="flex shrink-0 gap-4">
+          <div className="grid w-full grid-cols-2 gap-3 sm:flex sm:w-auto sm:shrink-0 sm:gap-4">
             <Button
               variant="outline"
-              className="h-8 rounded-full border-primary px-4 font-normal text-primary hover:bg-primary/5 hover:text-primary"
+              className="h-9 min-w-0 rounded-full border-primary px-3 font-normal text-primary hover:bg-primary/5 hover:text-primary sm:h-8 sm:px-4"
             >
               <Download className="size-[15px]" />
-              下载中心
+              <span className="truncate">下载中心</span>
             </Button>
-            <Button className="h-8 rounded-full px-4 font-normal">
+            <Button className="h-9 min-w-0 rounded-full px-3 font-normal sm:h-8 sm:px-4">
               <Printer className="size-[15px]" />
-              打印管理
+              <span className="truncate">打印管理</span>
             </Button>
           </div>
         </header>
 
-        <section aria-label="常用功能" className="flex flex-col gap-3 pt-4">
-          <div className="grid grid-cols-3 gap-4">
+        <section aria-label="常用功能" className="flex flex-col gap-3 pt-1 sm:pt-4">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
             {primaryFeatures.map((feature) => (
               <FeatureCard key={feature.title} feature={feature} />
             ))}
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
             {secondaryFeatures.map((feature) => (
               <FeatureCard key={feature.title} feature={feature} compact />
             ))}
