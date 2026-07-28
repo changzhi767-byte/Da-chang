@@ -21,7 +21,7 @@ function App() {
     <div className="relative min-h-dvh overflow-x-hidden bg-[#f7f9fc]">
       <div
         className={cn(
-          "min-h-dvh transition-[width] duration-300 ease-out",
+          "home-pane min-h-dvh transition-[width] duration-300 ease-out",
           reviewOpen ? "w-full md:w-[40%]" : "w-full"
         )}
       >

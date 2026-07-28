@@ -119,7 +119,7 @@ function FeatureCard({
       )}
       <CardContent
         className={cn(
-          "relative z-10 flex h-full px-4",
+          "feature-card-content relative z-10 flex h-full px-4",
           compact
             ? "flex-col items-start justify-center gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-3"
             : "flex-col justify-center gap-2 pr-24 sm:pr-4"
@@ -246,7 +246,7 @@ export function ParentHome({ splitView = false }: { splitView?: boolean }) {
       <div className="mx-auto flex w-full max-w-[736px] flex-col gap-4">
         <header
           className={cn(
-            "flex flex-col gap-4 py-2 sm:flex-row sm:items-center",
+            "home-header flex flex-col gap-4 py-2 sm:flex-row sm:items-center",
             splitView && "md:gap-2"
           )}
         >
@@ -278,7 +278,7 @@ export function ParentHome({ splitView = false }: { splitView?: boolean }) {
           </div>
           <div
             className={cn(
-              "grid w-full grid-cols-2 gap-3 sm:flex sm:w-auto sm:shrink-0 sm:gap-4",
+              "home-actions grid w-full grid-cols-2 gap-3 sm:flex sm:w-auto sm:shrink-0 sm:gap-4",
               splitView && "md:gap-2"
             )}
           >
@@ -305,12 +305,12 @@ export function ParentHome({ splitView = false }: { splitView?: boolean }) {
         </header>
 
         <section aria-label="常用功能" className="flex flex-col gap-3 pt-1 sm:pt-4">
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
+          <div className="primary-feature-grid grid gap-3 sm:gap-4">
             {primaryFeatures.map((feature) => (
               <FeatureCard key={feature.title} feature={feature} />
             ))}
           </div>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+          <div className="secondary-feature-grid grid gap-3 sm:gap-4">
             {secondaryFeatures.map((feature) => (
               <FeatureCard key={feature.title} feature={feature} compact />
             ))}

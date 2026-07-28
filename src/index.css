@@ -60,3 +60,44 @@
     font-family: "PingFang SC", "Microsoft YaHei", Inter, system-ui, sans-serif;
   }
 }
+
+@layer components {
+  .home-pane {
+    container-type: inline-size;
+  }
+
+  .primary-feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .secondary-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @container (max-width: 499px) {
+    .home-header {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .home-actions {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .primary-feature-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .primary-feature-grid .feature-card-content {
+      padding-right: 6rem;
+    }
+  }
+
+  @container (max-width: 359px) {
+    .secondary-feature-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}
