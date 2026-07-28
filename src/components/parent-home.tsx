@@ -122,7 +122,7 @@ function FeatureCard({
           "feature-card-content relative z-10 flex h-full px-4",
           compact
             ? "flex-col items-start justify-center gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-3"
-            : "flex-col justify-center gap-2 pr-24 sm:pr-4"
+            : "flex-col justify-center gap-2 pr-24"
         )}
       >
         <div className="flex min-w-0 items-center gap-1">
