@@ -209,7 +209,8 @@ function BottomNavigation({ splitView = false }: { splitView?: boolean }) {
       aria-label="主导航"
       className={cn(
         "fixed bottom-[max(16px,env(safe-area-inset-bottom))] left-1/2 z-30 flex h-[54px] w-[calc(100%-32px)] max-w-[343px] -translate-x-1/2 items-center rounded-[28px] border border-[#b2b6c6]/35 bg-white/80 p-[3px] shadow-[15px_3px_22px_rgba(24,111,242,0.05),inset_0_0_3px_rgba(255,255,255,0.75)] backdrop-blur-md sm:bottom-8",
-        splitView && "md:left-[20%] md:max-w-[calc(40%-32px)]"
+        splitView &&
+          "md:absolute md:left-1/2 md:max-w-[calc(100%-32px)]"
       )}
     >
       {items.map((item) => (
@@ -240,7 +241,8 @@ export function ParentHome({ splitView = false }: { splitView?: boolean }) {
     <main
       className={cn(
         "min-h-dvh overflow-x-hidden bg-[#f7f9fc] px-4 pb-32 pt-[max(24px,env(safe-area-inset-top))] text-[#1c1f2e] sm:min-h-[1024px] sm:pt-8",
-        splitView && "md:min-h-dvh md:px-3 md:pt-6"
+        splitView &&
+          "md:relative md:h-dvh md:min-h-0 md:overflow-y-auto md:px-3 md:pt-6"
       )}
     >
       <div className="mx-auto flex w-full max-w-[736px] flex-col gap-4">
