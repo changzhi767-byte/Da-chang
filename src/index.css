@@ -90,14 +90,27 @@
       grid-template-columns: minmax(0, 1fr);
     }
 
+    .secondary-feature-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
     .primary-feature-grid .feature-card-content {
       padding-right: 6rem;
     }
-  }
 
-  @container (max-width: 359px) {
-    .secondary-feature-grid {
-      grid-template-columns: minmax(0, 1fr);
+    .secondary-feature-grid .feature-card-content {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0.25rem;
+      padding-right: 1rem;
+    }
+
+    .feature-card-title,
+    .feature-card-description {
+      overflow: visible;
+      white-space: normal;
+      text-overflow: clip;
     }
   }
 }

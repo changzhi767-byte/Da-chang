@@ -131,12 +131,12 @@ function FeatureCard({
             className="h-[15px] w-1 shrink-0 rounded-full"
             style={{ backgroundColor: feature.accent }}
           />
-          <span className="min-w-0 truncate text-base font-semibold leading-[22px]">
+          <span className="feature-card-title min-w-0 text-base font-semibold leading-[22px]">
             {feature.title}
           </span>
           <ArrowRightCircle className="size-3.5 shrink-0 fill-foreground text-white" />
         </div>
-        <p className="max-w-full truncate text-[11px] leading-[1.4] text-foreground">
+        <p className="feature-card-description max-w-full text-[11px] leading-[1.4] text-foreground">
           {feature.description}
         </p>
       </CardContent>
@@ -242,10 +242,15 @@ export function ParentHome({ splitView = false }: { splitView?: boolean }) {
       className={cn(
         "min-h-dvh overflow-x-hidden bg-[#f7f9fc] px-4 pb-32 pt-[max(24px,env(safe-area-inset-top))] text-[#1c1f2e] sm:min-h-[1024px] sm:pt-8",
         splitView &&
-          "md:relative md:h-dvh md:min-h-0 md:overflow-y-auto md:px-3 md:pt-6"
+          "md:relative md:h-dvh md:min-h-0 md:overflow-hidden md:px-3 md:pb-0 md:pt-6"
       )}
     >
-      <div className="mx-auto flex w-full max-w-[736px] flex-col gap-4">
+      <div
+        className={cn(
+          "mx-auto flex w-full max-w-[736px] flex-col gap-4",
+          splitView && "md:h-full md:overflow-y-auto md:pb-32"
+        )}
+      >
         <header
           className={cn(
             "home-header flex flex-col gap-4 py-2 sm:flex-row sm:items-center",
