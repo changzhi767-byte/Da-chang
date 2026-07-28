@@ -76,9 +76,14 @@ function ReviewRow({ item }: { item: ReviewItem }) {
   )
 }
 
-export function HomeworkReview() {
+export function HomeworkReview({ embedded = false }: { embedded?: boolean }) {
   return (
-    <main className="min-h-[1025px] bg-white px-4 pb-28 pt-8 text-[#1c1f2e]">
+    <main
+      className={cn(
+        "min-h-[1025px] bg-white px-4 pb-28 pt-8 text-[#1c1f2e]",
+        embedded && "relative h-dvh min-h-0 overflow-y-auto"
+      )}
+    >
       <div className="mx-auto flex w-full max-w-[736px] flex-col gap-4">
         <header className="relative flex h-9 items-center">
           <Button
@@ -144,7 +149,12 @@ export function HomeworkReview() {
         </section>
       </div>
 
-      <div className="fixed inset-x-0 bottom-0 z-20 bg-gradient-to-b from-white/0 via-white to-white px-4 pb-[34px] pt-4">
+      <div
+        className={cn(
+          "fixed inset-x-0 bottom-0 z-20 bg-gradient-to-b from-white/0 via-white to-white px-4 pb-[34px] pt-4",
+          embedded && "absolute"
+        )}
+      >
         <Button className="mx-auto flex h-11 w-full max-w-[640px] rounded-full text-[15px] font-normal">
           <Plus className="size-[17px]" />
           新增作业

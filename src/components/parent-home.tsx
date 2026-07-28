@@ -197,7 +197,7 @@ function TodoRow({
   )
 }
 
-function BottomNavigation() {
+function BottomNavigation({ splitView = false }: { splitView?: boolean }) {
   const items = [
     { label: "首页", icon: navHome, active: true },
     { label: "到店", icon: navStore },
@@ -207,7 +207,10 @@ function BottomNavigation() {
   return (
     <nav
       aria-label="主导航"
-      className="fixed bottom-[max(16px,env(safe-area-inset-bottom))] left-1/2 z-30 flex h-[54px] w-[calc(100%-32px)] max-w-[343px] -translate-x-1/2 items-center rounded-[28px] border border-[#b2b6c6]/35 bg-white/80 p-[3px] shadow-[15px_3px_22px_rgba(24,111,242,0.05),inset_0_0_3px_rgba(255,255,255,0.75)] backdrop-blur-md sm:bottom-8"
+      className={cn(
+        "fixed bottom-[max(16px,env(safe-area-inset-bottom))] left-1/2 z-30 flex h-[54px] w-[calc(100%-32px)] max-w-[343px] -translate-x-1/2 items-center rounded-[28px] border border-[#b2b6c6]/35 bg-white/80 p-[3px] shadow-[15px_3px_22px_rgba(24,111,242,0.05),inset_0_0_3px_rgba(255,255,255,0.75)] backdrop-blur-md sm:bottom-8",
+        splitView && "md:left-[20%] md:max-w-[calc(40%-32px)]"
+      )}
     >
       {items.map((item) => (
         <button
@@ -232,33 +235,69 @@ function BottomNavigation() {
   )
 }
 
-export function ParentHome() {
+export function ParentHome({ splitView = false }: { splitView?: boolean }) {
   return (
-    <main className="min-h-dvh overflow-x-hidden bg-[#f7f9fc] px-4 pb-32 pt-[max(24px,env(safe-area-inset-top))] text-[#1c1f2e] sm:min-h-[1024px] sm:pt-8">
+    <main
+      className={cn(
+        "min-h-dvh overflow-x-hidden bg-[#f7f9fc] px-4 pb-32 pt-[max(24px,env(safe-area-inset-top))] text-[#1c1f2e] sm:min-h-[1024px] sm:pt-8",
+        splitView && "md:min-h-dvh md:px-3 md:pt-6"
+      )}
+    >
       <div className="mx-auto flex w-full max-w-[736px] flex-col gap-4">
-        <header className="flex flex-col gap-4 py-2 sm:flex-row sm:items-center">
-          <div className="flex min-w-0 flex-1 items-center gap-4">
+        <header
+          className={cn(
+            "flex flex-col gap-4 py-2 sm:flex-row sm:items-center",
+            splitView && "md:gap-2"
+          )}
+        >
+          <div
+            className={cn(
+              "flex min-w-0 flex-1 items-center gap-4",
+              splitView && "md:gap-2"
+            )}
+          >
             <img
               alt="张老师头像"
               src={avatar}
-              className="size-14 shrink-0 rounded-full border-2 border-white/25 object-cover"
+              className={cn(
+                "size-14 shrink-0 rounded-full border-2 border-white/25 object-cover",
+                splitView && "md:size-12"
+              )}
             />
             <div className="min-w-0">
               <p className="truncate text-xs leading-[1.4]">下午好，张老师🎉</p>
-              <h1 className="truncate text-xl font-bold leading-[22px]">
+              <h1
+                className={cn(
+                  "truncate text-xl font-bold leading-[22px]",
+                  splitView && "md:text-base"
+                )}
+              >
                 太和区阳门店
               </h1>
             </div>
           </div>
-          <div className="grid w-full grid-cols-2 gap-3 sm:flex sm:w-auto sm:shrink-0 sm:gap-4">
+          <div
+            className={cn(
+              "grid w-full grid-cols-2 gap-3 sm:flex sm:w-auto sm:shrink-0 sm:gap-4",
+              splitView && "md:gap-2"
+            )}
+          >
             <Button
               variant="outline"
-              className="h-9 min-w-0 rounded-full border-primary px-3 font-normal text-primary hover:bg-primary/5 hover:text-primary sm:h-8 sm:px-4"
+              className={cn(
+                "h-9 min-w-0 rounded-full border-primary px-3 font-normal text-primary hover:bg-primary/5 hover:text-primary sm:h-8 sm:px-4",
+                splitView && "md:px-3 md:text-xs"
+              )}
             >
               <Download className="size-[15px]" />
               <span className="truncate">下载中心</span>
             </Button>
-            <Button className="h-9 min-w-0 rounded-full px-3 font-normal sm:h-8 sm:px-4">
+            <Button
+              className={cn(
+                "h-9 min-w-0 rounded-full px-3 font-normal sm:h-8 sm:px-4",
+                splitView && "md:px-3 md:text-xs"
+              )}
+            >
               <Printer className="size-[15px]" />
               <span className="truncate">打印管理</span>
             </Button>
@@ -291,7 +330,7 @@ export function ParentHome() {
         </Card>
       </div>
 
-      <BottomNavigation />
+      <BottomNavigation splitView={splitView} />
     </main>
   )
 }
