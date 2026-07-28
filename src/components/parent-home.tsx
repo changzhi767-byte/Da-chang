@@ -131,12 +131,12 @@ function FeatureCard({
             className="h-[15px] w-1 shrink-0 rounded-full"
             style={{ backgroundColor: feature.accent }}
           />
-          <span className="feature-card-title min-w-0 text-base font-semibold leading-[22px]">
+          <span className="feature-card-title min-w-0 truncate text-base font-semibold leading-[22px]">
             {feature.title}
           </span>
           <ArrowRightCircle className="size-3.5 shrink-0 fill-foreground text-white" />
         </div>
-        <p className="feature-card-description max-w-full text-[11px] leading-[1.4] text-foreground">
+        <p className="feature-card-description max-w-full truncate text-[11px] leading-[1.4] text-foreground">
           {feature.description}
         </p>
       </CardContent>

@@ -108,9 +108,9 @@
 
     .feature-card-title,
     .feature-card-description {
-      overflow: visible;
-      white-space: normal;
-      text-overflow: clip;
+      overflow: visible !important;
+      white-space: normal !important;
+      text-overflow: clip !important;
     }
   }
 }
