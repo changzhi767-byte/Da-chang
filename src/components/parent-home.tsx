@@ -248,7 +248,7 @@ export function ParentHome({ splitView = false }: { splitView?: boolean }) {
       <div
         className={cn(
           "mx-auto flex w-full max-w-[736px] flex-col gap-4",
-          splitView && "md:h-full md:overflow-y-auto md:pb-32"
+          splitView && "split-scroll-area md:h-full md:overflow-y-auto md:pb-32"
         )}
       >
         <header

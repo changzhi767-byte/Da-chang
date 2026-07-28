@@ -66,6 +66,32 @@
     container-type: inline-size;
   }
 
+  .split-scroll-area {
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin;
+  }
+
+  .split-scroll-area:hover {
+    scrollbar-color: rgb(148 163 184 / 55%) transparent;
+  }
+
+  .split-scroll-area::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .split-scroll-area::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .split-scroll-area::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: transparent;
+  }
+
+  .split-scroll-area:hover::-webkit-scrollbar-thumb {
+    background: rgb(148 163 184 / 55%);
+  }
+
   .primary-feature-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
