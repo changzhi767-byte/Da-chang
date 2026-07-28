@@ -37,7 +37,7 @@ function App() {
           <ResizablePanel
             id="home"
             defaultSize="40%"
-            minSize="320px"
+            minSize="375px"
             maxSize="65%"
           >
             <div className="home-pane h-full bg-[#f7f9fc]">
